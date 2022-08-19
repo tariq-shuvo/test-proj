@@ -7,6 +7,7 @@ module.exports = {
     cashIn: `${process.env.CASH_IN}`,
     cashOutNatural: `${process.env.CASH_OUT_NATURAL}`,
     cashOutJuridical: `${process.env.CASH_OUT_JURIDICAL}`,
+    // If dynamic axios api failed to get data
     cashInConstant: {
         percents: 0.03,
         max: {
@@ -14,6 +15,7 @@ module.exports = {
             currency: "EUR"
         }
     },
+    // If dynamic axios api failed to get data
     cashOutConstant: {
         natural: {
             percents: 0.3,
