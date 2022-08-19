@@ -1,9 +1,9 @@
 const { dotEnvPath } = require('./path/index');
-const { config } = require('dotenv')
+const dotenv = require('dotenv')
 
-config({path: dotEnvPath()})
+dotenv.config({path: dotEnvPath()})
 
-export default {
+module.exports = {
     cashIn: `${process.env.CASH_IN}`,
     cashOutNatural: `${process.env.CASH_OUT_NATURAL}`,
     cashOutJuridical: `${process.env.CASH_OUT_JURIDICAL}`,

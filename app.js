@@ -1,6 +1,8 @@
 const express = require('express')
 const fs = require('fs');
 const path = require('path');
+const { cashTransactionOperation } = require('./lib/CashTransactionOperation');
+const { naturalUserCashOuts } = require('./lib/CheckDate');
 const app = express()
 const port = 3000
 
@@ -12,12 +14,13 @@ const checkInputInnformation = (pathURL) => {
         }
         
         let jsonDataList = JSON.parse(jsonString);
-        console.log(jsonDataList)
-        // for(let i=0; i<jsonDataList.length; i++){
-        //     let result = await cashTransactionOperation(jsonDataList[i])
-        //     console.log(result)
-        // }
-        // naturalUserCashOuts.splice(0)
+
+        for(let i=0; i<jsonDataList.length; i++){
+            let result = await cashTransactionOperation(jsonDataList[i])
+            console.log(result)
+        }
+
+        naturalUserCashOuts.splice(0)
     });
 }
 
